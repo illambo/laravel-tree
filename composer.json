@@ -18,6 +18,9 @@
         "orchestra/testbench": ">=6.25",
         "friendsofphp/php-cs-fixer": "^3"
     },
+    "conflict": {
+        "nesbot/carbon": "<2.62.1"
+    },
     "autoload": {
         "psr-4": {
             "Nevadskiy\\Tree\\": "src/"
