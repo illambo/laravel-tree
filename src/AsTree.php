@@ -63,7 +63,7 @@ trait AsTree
     /**
      * Get the path of the model.
      */
-    public function getPath(): Path
+    public function getPath(): ?Path
     {
         return $this->getAttribute($this->getPathColumn());
     }

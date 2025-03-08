@@ -35,7 +35,11 @@ class BuilderMixin
      */
     public function whereAncestor(): callable
     {
-        return function (string $column, Path $path, string $boolean = 'and') {
+        return function (string $column, ?Path $path, string $boolean = 'and') {
+            if (is_null($path)) {
+                return $this;
+            }
+
             if ($this->getConnection() instanceof PostgresConnection) {
                 return $this->where($column, '~', "*.{$path}", $boolean);
             }
@@ -59,7 +63,11 @@ class BuilderMixin
      */
     public function whereSelfOrAncestor(): callable
     {
-        return function (string $column, Path $path, string $boolean = 'and') {
+        return function (string $column, ?Path $path, string $boolean = 'and') {
+            if (is_null($path)) {
+                return $this;
+            }
+
             if ($this->getConnection() instanceof PostgresConnection) {
                 return $this->where($column, BuilderMixin::ANCESTOR, $path, $boolean);
             }
@@ -144,7 +152,11 @@ class BuilderMixin
      */
     public function whereSelfOrDescendant(): callable
     {
-        return function (string $column, Path $path, string $boolean = 'and') {
+        return function (string $column, ?Path $path, string $boolean = 'and') {
+            if (is_null($path)) {
+                return $this;
+            }
+
             if ($this->getConnection() instanceof PostgresConnection) {
                 return $this->where($column, BuilderMixin::DESCENDANT, $path, $boolean);
             }
