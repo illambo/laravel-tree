@@ -125,7 +125,7 @@ class BuilderMixin
      */
     public function whereSelfOrAncestorOf(): callable
     {
-        return function (Model $model, string $column = null, string $boolean = 'and') {
+        return function (Model $model, ?string $column = null, string $boolean = 'and') {
             return $this->whereSelfOrAncestor(
                 $column ?: $model->newQuery()->qualifyColumn($model->getPathColumn()),
                 $model->getPath(),
@@ -139,7 +139,7 @@ class BuilderMixin
      */
     public function orWhereSelfOrAncestorOf(): callable
     {
-        return function (Model $model, string $column = null) {
+        return function (Model $model, ?string $column = null) {
             return $this->orWhereSelfOrAncestor(
                 $column ?: $model->newQuery()->qualifyColumn($model->getPathColumn()),
                 $model->getPath(),
@@ -254,7 +254,7 @@ class BuilderMixin
      */
     public function whereSelfOrDescendantOf(): callable
     {
-        return function (Model $model, string $column = null, string $boolean = 'and') {
+        return function (Model $model, ?string $column = null, string $boolean = 'and') {
             return $this->whereSelfOrDescendant(
                 $column ?: $model->newQuery()->qualifyColumn($model->getPathColumn()),
                 $model->getPath(),
@@ -268,7 +268,7 @@ class BuilderMixin
      */
     public function orWhereSelfOrDescendantOf(): callable
     {
-        return function (Model $model, string $column = null) {
+        return function (Model $model, ?string $column = null) {
             return $this->orWhereSelfOrDescendant(
                 $column ?: $model->newQuery()->qualifyColumn($model->getPathColumn()),
                 $model->getPath(),
