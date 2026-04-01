@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.6.1 - 2025-06-14
+
+### What's Changed
+
+* fix BuilderMixin deprecation warnings by @vrusua in https://github.com/xalaida/laravel-tree/pull/43
+
+### New Contributors
+
+* @vrusua made their first contribution in https://github.com/xalaida/laravel-tree/pull/43
+
+**Full Changelog**: https://github.com/xalaida/laravel-tree/compare/0.6.0...0.6.1
+
+## 0.6.0 - 2025-03-08
+
+### What's Changed
+
+* Laravel 12 support by @xalaida in https://github.com/xalaida/laravel-tree/pull/40
+
+**Full Changelog**: https://github.com/xalaida/laravel-tree/compare/0.5.2...0.6.0
+
+## 0.5.2 - 2025-03-08
+
+### Fixed
+
+- `php artisan model:show` crash for models with `AsTree` trait.
+
+## Add SQLite support - 2024-10-05
+
+### Added
+
+- SQLite support by @tgeorgel in #34
+
+## 0.5.0 - 2024-03-14
+
+### Added
+
+- Laravel 11 support by @mtvenD in #30
+
 ## 0.4.1 - 2023-12-19
 
 ### Fixed
